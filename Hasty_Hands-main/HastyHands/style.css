@@ -1,0 +1,367 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+/* STYLING FOR LIGHT MODE  */
+/* STYLING THE BODY  */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+}
+/* STYLING NAVBAR  */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.85);  /* Almost solid white */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 8px 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 15px 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+ /* STYLE OPTIONS OF NAVBAR  */
+ .options select {
+  margin-left: 20px;
+  padding: 8px 18px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #333;
+  border: none;
+  outline: none;
+}
+
+/* Hover effect */
+.options select:hover {
+  background: #f0f8ff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* STYLING HASTY HANDS HEADING  */
+.main_heading {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: #333;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* STYLING WHOLE BOX(INCLUDE CONTENT AND RESULT)  */
+.wrapper {
+   background: rgba(255, 255, 255, 0.85);  /* Almost solid white */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  width: 1000px;
+  border-radius: 15px;
+  padding: 35px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+/* REMOVE INPUT FIELD FROM DISPLAY  */
+.input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+/* STYLING ONLY CONTENT PART OF BOX  */
+.wrapper .content_box {
+  /* padding: top, left-right, bottom  */
+  padding: 13px 20px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+   background: rgba(255, 255, 255, 0.85);  /* Almost solid white */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 8px 8px 16px #d1d1d1, -8px -8px 16px #ffffff;
+}
+
+/* STYLING TYPING TEXT OF CONTENT BOX  */
+.content_box .typing_text {
+  max-height: 255px;
+  overflow-y: auto;
+}
+/* REMOVING SCROLL BAR FOR BETTER STYLING  */
+.typing_text::-webkit-scrollbar {
+  width: 0;
+}
+/* STYLING TYPING TEXT BOX PARAGRAPH SECTION  */
+.typing_text p {
+  font-size: 20px;
+  text-align: justify;
+  letter-spacing: 1px;
+}
+/* GIVING COLORING ACCORDING TO CORRECT OR INCORRECT  */
+.typing_text p span {
+  position: relative;
+}
+.typing_text p span.correct {
+  color: green;
+}
+.typing_text p span.incorrect {
+  color: red;
+  background-color: pink;
+  border-radius: 4px;
+  outline: 1px solid white;
+}
+.typing_text p span.current {
+  color: deeppink;
+}
+.typing_text p span.current::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #17a2b8;
+  animation: blink 1s ease-in-out infinite;
+  opacity: 0;
+}
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
+/* STYLING RESULT SECTION WHERE UL AND BUTTON ARE PRESENT  */
+.content_box .result {
+  align-items: center;
+  display: flex;
+  /* padding: top-bottom left-right  */
+  padding: 12px 0;
+  border-top: 1px solid #ccc;
+  margin-top: 15px;
+  justify-content: space-between;
+}
+.result .result_details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+/* REMOVE STYLING OF LIST DOTTED  */
+.result_details li {
+  list-style: none;
+  height: 22px;
+  align-items: center;
+  display: flex;
+}
+/* GIVING BORDER TO SEPERATE LIST  */
+.result_details li:not(:first-child) {
+  padding-left: 25px;
+  border-left: 1px solid #ccc;
+  padding-right: 15px;
+}
+/* STYLING SPAN TAG OF LIST  */
+.result_details li span {
+  display: block;
+  font-size: 20px;
+  margin-left: 10px;
+}
+/* STYLING PARAGRAPH MEANS LIST NAME  */
+.result_details li p {
+  font-size: 19px;
+}
+/* ADJUSTING BOLD PROPERTY OF <b> TAG IN HTML  */
+.result_details li b {
+  font-weight: 500;
+}
+/* STYLING THE TRY AGAIN BUTTON  */
+.buttons {
+  width: 900px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 25px;
+  height: 40px;
+}
+.buttons button {
+  padding: 5px 0;
+  background-color: #17a2b8;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  font-size: medium;
+  width: 150px;
+  transition: transform 0.1s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.buttons button:active {
+  transform: scale(0.97);
+}
+/* HOVER EFFECT ON BUTTONS  */
+.buttons button:hover {
+  background-color: #138496;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* STYLING FOR DARK MODE  */
+body.dark {
+  background: linear-gradient(135deg, #1e1e1e, #121212);
+  color: white;
+}
+
+body.dark .navbar,
+body.dark .wrapper,
+body.dark .content_box,
+body.dark .options select {
+  background: rgba(34, 34, 34, 0.85);
+  color: white;
+  border-color: #444;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .typing_text p span.correct {
+  color: #00e676;
+}
+
+body.dark .typing_text p span.incorrect {
+  color: #ff1744;
+  background-color: #4a1a1a;
+  outline: 1px solid #ff1744;
+}
+
+body.dark .typing_text p span.current::before {
+  background: #00bcd4;
+}
+
+body.dark .buttons button {
+  background-color: #00bcd4;
+}
+
+body.dark .buttons button:hover {
+  background-color: #0097a7;
+}
+body.dark .main_heading {
+  color: white;
+}
+
+/* apply media  query  */
+@media (max-width: 1024px) {
+  .wrapper {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .buttons {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
+
+  .options select {
+    font-size: 16px;
+    padding: 6px 14px;
+  }
+
+  .main_heading {
+    font-size: 28px;
+  }
+
+  .typing_text p {
+    font-size: 18px;
+  }
+
+  .result .result_details {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .result_details li:not(:first-child) {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main_heading {
+    font-size: 24px;
+  }
+
+  .typing_text p {
+    font-size: 16px;
+  }
+
+  .result_details li p,
+  .result_details li span {
+    font-size: 16px;
+  }
+
+  .result_details li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 480px) {
+  .wrapper {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .content_box .typing_text {
+    max-height: 180px;
+  }
+
+  .buttons {
+    margin-top: 15px;
+    gap: 8px;
+  }
+
+  .result .result_details {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .main_heading {
+    font-size: 22px;
+  }
+
+  .typing_text p {
+    font-size: 14px;
+  }
+
+  .result_details li p,
+  .result_details li span {
+    font-size: 14px;
+  }
+
+  .buttons button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
